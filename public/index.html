@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Загрузчик страниц</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Скачать страницу сайта оффлайн по ключевому слову</h1>
+        <p>
+          Список ключевых слов: <i>авто</i>; <i>игры</i>; <i>спорт</i>;
+          <i>кино</i>; <i>музыка</i>;
+        </p>
+      </header>
+
+      <section class="search-section">
+        <form class="search-form" id="searchForm">
+          <input
+            type="text"
+            class="search-input"
+            id="keywordInput"
+            name="keywordInput"
+            placeholder="Ключевое слово..."
+          />
+          <button type="submit" class="btn btn-primary" id="searchBtn">
+            <span>Найти</span>
+          </button>
+          <button type="button" class="btn btn-secondary" id="clearBtn">
+            <span>Обновить</span>
+          </button>
+        </form>
+        <div id="messageArea"></div>
+      </section>
+
+      <div class="content-area">
+        <div class="panel">
+          <div class="panel-header">Результаты поиска</div>
+          <div class="panel-body">
+            <ul class="url-list" id="urlList">
+              <li class="placeholder">Введите ключевое слово для поиска</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">Избранное</div>
+          <div class="panel-body">
+            <ul class="saved-list" id="savedList">
+              <li class="placeholder">Нет сохраненных страниц</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+          <div class="progress-info">
+            <span id="progressText">0%</span>
+            <span id="progressSize">0 KB / 0 KB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="viewer-container">
+        <div class="viewer-header">
+          <span>Смотреть</span>
+          <a href="#" target="_blank" id="originalLink" style="display: none"
+            >Перейти ></a
+          >
+        </div>
+        <iframe
+          class="viewer-content"
+          id="contentViewer"
+          srcdoc="<html><body style='display: flex; justify-content: center; align-items: center; height: 100%; color: #666; font-family: cursive;'><p>Страница для просмотра не выбрана</p></body></html>"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
